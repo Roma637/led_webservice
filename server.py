@@ -58,7 +58,8 @@ class FileUnparser():
         #we are missing the PIN NUMBERS
         for chann in dtcopy['CHANN']:
             # self.to_write += ' '.join(['CHANN',str(chann[0]),str(chann[1])])
-            self.to_write += ' '.join(['CHANN'].extend([str(ii) for ii in chann]))
+            final = ['CHANN']+[str(ii) for ii in chann]
+            self.to_write += ' '.join(final)
             self.to_write += '\n'
 
         self.to_write += '\n'
